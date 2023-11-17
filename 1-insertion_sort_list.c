@@ -1,4 +1,6 @@
 #include "sort.h"
+#include <stdio.h>
+
 /**
  * insertion_sort_list - sorts a list using insertion algorithm
  * @list: A doubly linked list
@@ -9,7 +11,7 @@ void insertion_sort_list(listint_t **list)
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	listint_t *curr = (*list)->next;
+		listint_t *curr = (*list)->next;
 
 	while (curr != NULL)
 	{
@@ -23,9 +25,23 @@ void insertion_sort_list(listint_t **list)
 		}
 
 		if (temp == NULL)
-			(*list)->n = value;
-		else
-			temp->next->n = value;
+		{
+			curr->prev->next = curr->next;
+			if (curr->next != NULL)
+				curr->next->prev = curr->prev;
+			curr->next = *list;
+			curr->prev = NULL;
+			(*list)->prev = curr;
+			*list = curr;
+		} else
+		{
+			temp->next->prev = curr;
+			curr->prev = temp;
+			curr->next = temp->next;
+			if (temp->next != NULL)
+				temp->next->prev = curr;
+			temp->next = curr;
+		}
 
 		print_list(*list);
 		curr = curr->next;
