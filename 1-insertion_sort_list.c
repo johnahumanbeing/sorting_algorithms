@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
  * insertion_sort_list - sorts a list using insertion algorithm
@@ -8,10 +7,14 @@
 */
 void insertion_sort_list(listint_t **list)
 {
-	if (list == NULL || *list == NULL || (*list)->next == NULL)
-		return;
+	listint_t *curr;
 
-		listint_t *curr = (*list)->next;
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+	{
+		return;
+	}
+
+	curr = (*list)->next;
 
 	while (curr != NULL)
 	{
