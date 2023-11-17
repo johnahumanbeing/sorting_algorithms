@@ -21,16 +21,3 @@ void print_array(const int *array, size_t size)
 	}
 	printf("\n");
 }
-
-/**
- * swap - swaps two ints
- * @a: int 1
- * @b: int 2
- * Return: is void
-*/
-void swap(int *a, int *b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
