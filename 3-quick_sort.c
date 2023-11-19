@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * 
+ * lomutopartition -
  * 
  * 
 */
@@ -28,8 +28,6 @@ size_t lomutopartition(int *array, int low, int high)
 
 	return (i + 1);
 }
-
-void quick_sort_alg(int *array, int low, int high);
 
 void quick_sort(int *array, size_t size)
 {
