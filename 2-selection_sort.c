@@ -1,13 +1,16 @@
 #include "sort.h"
 /**
- * add the comments 
- * also check for the compiler errors
+ * selection_sort - sorts an arrat using selection sort
+ * algorithm
+ * @array: array to sort
+ * @size: size of array
+ * return: is void
+ *
 */
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, asc;
 	int temp;
-	/* asc to stand for ascending*/
 
 	for (i = 0; i < size - 1; i++)
 	{
