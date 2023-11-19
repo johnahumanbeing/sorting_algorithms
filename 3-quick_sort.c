@@ -1,8 +1,8 @@
 #include "sort.h"
 /**
- * mzeee hapa utaad comments 
- * halafu hapo kwa compiler utamake changes
- * wacha nilale
+ * 
+ * 
+ * 
 */
 
 size_t lomutopartition(int *array, int low, int high)
