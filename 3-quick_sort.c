@@ -1,8 +1,10 @@
 #include "sort.h"
 /**
- * lomutopartition -
- * 
- * 
+ * lomutopartition - gets the size of array
+ * @array: array to check
+ * @low: lowest in array
+ * @high: highest in array
+ * Return: size of array
 */
 
 size_t lomutopartition(int *array, int low, int high)
@@ -29,6 +31,14 @@ size_t lomutopartition(int *array, int low, int high)
 	return (i + 1);
 }
 
+/**
+ * quick_sort - sort the array using
+ * quick sort algorithm
+ * @array: array to sort
+ * @size: sizeof array
+ * Return: is void
+*/
+
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
@@ -37,6 +47,13 @@ void quick_sort(int *array, size_t size)
 	quick_sort_alg(array, 0, size - 1);
 }
 
+/**
+ * quick_sort_alg - sorts using divide and conqoer
+ * @array: array to check
+ * @low: lower end
+ * @high: higher end
+ * Return: is void
+*/
 void quick_sort_alg(int *array, int low, int high)
 {
 	if (low < high)
