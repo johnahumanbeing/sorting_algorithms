@@ -2,32 +2,45 @@
 /**
  * lomutopartition - gets the size of array
  * @array: array to check
- * @low: lowest in array
- * @high: highest in array
+ *@lomuto: the first index (highest)
+ * @end: lowest in array (end index)
+ * @size: the size of the array
  * Return: size of array
 */
 
-size_t lomutopartition(int *array, int low, int high)
+size_t lomutopartition(int *array, size_t lomuto, size_t end, size_t size)
 {
-	int pivot = array[low];
-	int temp;
-	size_t i = low;
+	int pivot = array[end], temp;
+	size_t i = lomuto - 1, j;
 
-	for (size_t j = low + 1; <= (size_t)high; j++)
+	for (j = lomuto; j < end; j++)
 	{
 		if (array[j] < pivot)
 		{
 			i++;
-			temp = array[i];
 
-			array[i] = array[j];
-			array[j] = temp;
+			if (i != j)
+			{
+				temp = array[j];
+				array[j] = array[i];
+				array[i] = temp;
+
+				print_array(array, size);
+			}
 		}
 	}
 
-	temp = array[i];
-	array[i] = array[low];
-	array[j] = temp;
+	i++;
+
+	if (array[i] > pivot)
+	{
+		temp = array[i];
+		array[i] = array[end];
+		array[end] = temp;
+
+		print_array(array, size);
+
+	}
 
 	return (i);
 }
@@ -37,30 +50,32 @@ size_t lomutopartition(int *array, int low, int high)
  * @array: array to check
  * @low: lower end
  * @high: higher end
+ *@size: the size of the array
  * Return: is void
 */
-void quick_sort_alg(int *array, int low, int high)
+void quick_sort_alg(int *array, int low, int high, size_t size)
 {
-	if (low < high)
-	{
-		int pivot = lomutopartition(array, low, high);
+	size_t pivot;
 
-		quick_sort_alg(array, low, pivot - 1);
-		quick_sort_alg(array, pivot + 1, high);
-	}
+	if (low < high)
+	return;
+
+	pivot = lomutopartition(array, low, high, size);
+
+	quick_sort_alg(array, low, pivot - 1, size);
+	quick_sort_alg(array, pivot + 1, high, size);
 }
 
 /**
- * quick_sort - sort the array using
- * quick sort algorithm
+ * quick_sort - sort the array using uick sort algorithm
  * @array: array to sort
- * @size: sizeof array
+ * @size: size of array
  * Return: is void
 */
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
-		return;
+			return;
 
-	quick_sort_alg(array, 0, size - 1);
+	quick_sort_alg(array, 0, size - 1, size);
 }
