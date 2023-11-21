@@ -17,6 +17,7 @@ void quick_sort(int *array, size_t size)
  * @array: array to sort
  * @s: start of array
  * @end: end of array
+ * @size: sizeof array
  * Return: is void
 */
 void quick_sort_alog(int *array, int s, int end, size_t size)
