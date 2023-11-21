@@ -22,16 +22,16 @@
 
 | Task | File |
 | ---- | ---- |
-| 0. Bubble sort | [SOON](./) |
-| 1. Insertion sort | [SOON](./) |
-| 2. Selection sort | [SOON](./) |
-| 3. Quick sort | [SOON](./) |
-| 4. Shell sort - Knuth Sequence | [SOON](./) |
-| 5. Cocktail shaker sort | [SOON](./) |
-| 6. Counting sort | [SOON](./) |
-| 7. Merge sort | [SOON](./) |
-| 8. Heap sort | [SOON](./) |
-| 9. Radix sort | [SOON](./) |
-| 10. Bitonic sort | [SOON](./) |
-| 11. Quick Sort - Hoare Partition scheme | [SOON](./) |
+| 0. Bubble sort | [0-bubble_sort.c_](./bubble) |
+| 1. Insertion sort | [1-insertion_sort_list.c](./insertion) |
+| 2. Selection sort | [2-selection_sort.c](./select) |
+| 3. Quick sort | [3-quick_sort.c](./sort) |
+| 4. Shell sort - Knuth Sequence | [100-shell_sort.c](./shell) |
+| 5. Cocktail shaker sort | [101-cocktail_sort.c](./cocktail) |
+| 6. Counting sort | [102-counting_sort.c](./counting) |
+| 7. Merge sort | [103-merge_sort.c](./merge) |
+| 8. Heap sort | [104-heap_sort.c](./heap) |
+| 9. Radix sort | [105-radix_sort.c](./radix) |
+| 10. Bitonic sort | [106-bitonic_sort.c](./bitonic) |
+| 11. Quick Sort - Hoare Partition scheme | [](./) |
 | 12. Dealer | [SOON](./) |
