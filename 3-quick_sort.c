@@ -8,7 +8,7 @@
 */
 void quick_sort(int *array, size_t size)
 {
-	quick_sort_alog(array, 0, size);
+	quick_sort_alog(array, 0, size, size);
 
 }
 
@@ -19,17 +19,18 @@ void quick_sort(int *array, size_t size)
  * @end: end of array
  * Return: is void
 */
-void quick_sort_alog(int *array, int s, int end)
+void quick_sort_alog(int *array, int s, int end, size_t size)
 {
 	int pivot;
 
 	if (end <= s)
 	{
+		print_array(array, size);
 		return;
 	}
 	pivot = partition(array, s, end);
-	quick_sort_alog(array, s, pivot - 1);
-	quick_sort_alog(array, pivot + 1, end);
+	quick_sort_alog(array, s, pivot - 1, size);
+	quick_sort_alog(array, pivot + 1, end, size);
 }
 
 /**
